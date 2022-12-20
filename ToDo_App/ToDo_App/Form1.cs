@@ -8,21 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace ToDo_App
 {
     public partial class Form1 : Form
     {
-        public static string getConnectionString() 
+        public static string getConnectionString()
         {
             string basePath = Application.StartupPath;
             int index = basePath.IndexOf("ToDo_App");
             // add ToDo_App to path 
             string path = basePath.Substring(0, index + @"ToDo_App\ToDo_App".Length) + @"\Database.mdf";
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+path+ ";Integrated Security=True;Connect Timeout=30";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + ";Integrated Security=True;Connect Timeout=30";
             return connectionString;
             //static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\Database.mdf;Integrated Security=True;Connect Timeout=30";
 
         }
+        
+        
 
         public void updateApp()
         {
@@ -70,11 +74,13 @@ namespace ToDo_App
 
         private void enterButton_Click(object sender, EventArgs e)
         {
+            DateTime foo = DateTime.Now;
+            int unixTime = (int)((DateTimeOffset)foo).ToUnixTimeSeconds();
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
-            if (titleTextBox.Text != null && descriptionTextBox.Text != null) 
+            if (titleTextBox.Text != null && descriptionTextBox.Text != null)
             {
-                SqlCommand cmd = new SqlCommand("INSERT INTO ActivityTracker (Aktivitas, Selesai, Waktu, Deskripsi) VALUES ('" + titleTextBox.Text + "','" + 1  +"','"+ 0 + "','" + descriptionTextBox.Text+"')", dbConnection);
+                SqlCommand cmd = new SqlCommand("INSERT INTO ActivityTracker (Aktivitas, Selesai, Waktu, Deskripsi) VALUES ('" + titleTextBox.Text + "','" + 1 + "','" + unixTime + "','" + descriptionTextBox.Text + "')", dbConnection);
                 cmd.ExecuteNonQuery();
             }
             dbConnection.Close();
@@ -96,16 +102,11 @@ namespace ToDo_App
                 SqlCommand cmd = new SqlCommand("DELETE FROM ActivityTracker WHERE Aktivitas='" + itemChecked.ToString() + "'", dbConnection);
                 cmd.ExecuteNonQuery();
             }
-            
+
             //Console.Write(testCheckBox.SelectedIndex);
-            
+
             dbConnection.Close();
             refreshTable();
-        }
-
-        private void testCheckBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
 
@@ -138,6 +139,9 @@ namespace ToDo_App
         {
             refreshTable();
             //updateApp();
+        }
+        private void testCheckBox_MouseHover(object sender, EventArgs e)
+        {
         }
     }
 }

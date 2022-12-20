@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.refreshButton = new System.Windows.Forms.Button();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.enterButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.testCheckBox = new System.Windows.Forms.CheckedListBox();
             this.WhatIsChecked = new System.Windows.Forms.Button();
-            this.descriptionLabel = new System.Windows.Forms.Label();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.activityTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // refreshButton
@@ -59,7 +62,7 @@
             // 
             // enterButton
             // 
-            this.enterButton.Location = new System.Drawing.Point(635, 332);
+            this.enterButton.Location = new System.Drawing.Point(563, 300);
             this.enterButton.Name = "enterButton";
             this.enterButton.Size = new System.Drawing.Size(75, 23);
             this.enterButton.TabIndex = 3;
@@ -80,11 +83,11 @@
             // testCheckBox
             // 
             this.testCheckBox.FormattingEnabled = true;
-            this.testCheckBox.Location = new System.Drawing.Point(71, 54);
+            this.testCheckBox.Location = new System.Drawing.Point(223, 54);
             this.testCheckBox.Name = "testCheckBox";
             this.testCheckBox.Size = new System.Drawing.Size(204, 199);
             this.testCheckBox.TabIndex = 5;
-            this.testCheckBox.SelectedIndexChanged += new System.EventHandler(this.testCheckBox_SelectedIndexChanged);
+            this.testCheckBox.MouseHover += new System.EventHandler(this.testCheckBox_MouseHover);
             // 
             // WhatIsChecked
             // 
@@ -97,15 +100,6 @@
             this.WhatIsChecked.UseVisualStyleBackColor = true;
             this.WhatIsChecked.Click += new System.EventHandler(this.WhatIsChecked_Click);
             // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(296, 57);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(84, 13);
-            this.descriptionLabel.TabIndex = 7;
-            this.descriptionLabel.Text = "descriptionLabel";
-            // 
             // descriptionTextBox
             // 
             this.descriptionTextBox.Location = new System.Drawing.Point(536, 118);
@@ -115,13 +109,32 @@
             this.descriptionTextBox.TabIndex = 8;
             this.descriptionTextBox.Text = "Deskripsi";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(30, 54);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(147, 199);
+            this.listBox1.TabIndex = 9;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(524, 338);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(139, 20);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.descriptionTextBox);
-            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.WhatIsChecked);
             this.Controls.Add(this.testCheckBox);
             this.Controls.Add(this.deleteButton);
@@ -144,8 +157,10 @@
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.CheckedListBox testCheckBox;
         private System.Windows.Forms.Button WhatIsChecked;
-        private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ToolTip activityTooltip;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
