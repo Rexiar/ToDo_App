@@ -27,6 +27,7 @@ namespace ToDo_App
         public Form1()
         {
             InitializeComponent();
+            refreshTable();
         }
 
 
@@ -59,7 +60,7 @@ namespace ToDo_App
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO ActivityTracker (Aktivitas, Selesai) VALUES ('" + titleTextBox.Text + "','" + 1 + "')", dbConnection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO ActivityTracker (Aktivitas, Selesai, Deskripsi) VALUES ('" + titleTextBox.Text + "','" + 1 + "','" + NewDescBox.Text + "')", dbConnection);
             cmd.ExecuteNonQuery();
 
             dbConnection.Close();
@@ -93,6 +94,11 @@ namespace ToDo_App
 
         }
 
+        private void DescBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         // CODE BELOW IS FOR TESTING ONLY
         private void WhatIsChecked_Click(object sender, EventArgs e)
@@ -117,6 +123,33 @@ namespace ToDo_App
                                     testCheckBox.GetItemCheckState(testCheckBox.Items.IndexOf(itemChecked)).ToString() + ".");
                 }
             
+        }
+
+        private void testCheckBox_Click(object sender, EventArgs e)
+        {
+            SqlConnection dbConnection = new SqlConnection(connectionString);
+            dbConnection.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT Deskripsi FROM ActivityTracker WHERE Aktivitas='" + testCheckBox.SelectedItem.ToString() + "'", dbConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+            DataSet dataSet = new DataSet();
+            sqlDataAdapter.Fill(dataSet);
+            //MessageBox.Show(dataSet.Tables[0].Rows[0].["Aktivitas"].ToString());
+
+            //DescBox.Text =
+
+            //object itemSelected = testCheckBox.SelectedItem;
+            //MessageBox.Show("You are in the CheckedListBox.Click event.");
+            //MessageBox.Show(itemSelected.ToString());
+            //if (itemSelected.ToString() == "heya")
+            // {
+            DescBox.Text = testCheckBox.Text;
+            //}
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
