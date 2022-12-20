@@ -72,10 +72,11 @@ namespace ToDo_App
         {
             SqlConnection dbConnection = new SqlConnection(connectionString);
             dbConnection.Open();
-
-            SqlCommand cmd = new SqlCommand("INSERT INTO ActivityTracker (Aktivitas, Selesai) VALUES ('" + titleTextBox.Text + "','" + 1 + "')", dbConnection);
-            cmd.ExecuteNonQuery();
-
+            if (titleTextBox.Text != null && descriptionTextBox.Text != null) 
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO ActivityTracker (Aktivitas, Selesai, Waktu, Deskripsi) VALUES ('" + titleTextBox.Text + "','" + 1  +"','"+ 0 + "','" + descriptionTextBox.Text+"')", dbConnection);
+                cmd.ExecuteNonQuery();
+            }
             dbConnection.Close();
             refreshTable();
         }
