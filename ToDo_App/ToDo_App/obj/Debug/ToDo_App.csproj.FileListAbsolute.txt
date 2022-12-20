@@ -1,0 +1,13 @@
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\obj\Debug\ToDo_App.csproj.AssemblyReference.cache
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\obj\Debug\ToDo_App.csproj.SuggestedBindingRedirects.cache
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\obj\Debug\ToDo_App.Form1.resources
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\obj\Debug\ToDo_App.Properties.Resources.resources
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\obj\Debug\ToDo_App.csproj.GenerateResource.cache
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\obj\Debug\ToDo_App.csproj.CoreCompileInputs.cache
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\bin\Debug\Database.mdf
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\bin\Debug\Database_log.ldf
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\bin\Debug\ToDo_App.exe.config
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\bin\Debug\ToDo_App.exe
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\bin\Debug\ToDo_App.pdb
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\obj\Debug\ToDo_App.exe
+C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\obj\Debug\ToDo_App.pdb
