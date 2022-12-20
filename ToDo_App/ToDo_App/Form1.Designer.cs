@@ -39,10 +39,9 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(279, 378);
-            this.refreshButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.refreshButton.Location = new System.Drawing.Point(209, 307);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(100, 28);
+            this.refreshButton.Size = new System.Drawing.Size(75, 23);
             this.refreshButton.TabIndex = 0;
             this.refreshButton.Text = "hey :)";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -51,29 +50,25 @@
             // activityListBox
             // 
             this.activityListBox.FormattingEnabled = true;
-            this.activityListBox.ItemHeight = 16;
-            this.activityListBox.Location = new System.Drawing.Point(93, 138);
-            this.activityListBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.activityListBox.Location = new System.Drawing.Point(71, 74);
             this.activityListBox.Name = "activityListBox";
-            this.activityListBox.Size = new System.Drawing.Size(332, 116);
+            this.activityListBox.Size = new System.Drawing.Size(250, 108);
             this.activityListBox.TabIndex = 1;
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(813, 138);
-            this.titleTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.titleTextBox.Location = new System.Drawing.Point(610, 112);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(132, 22);
+            this.titleTextBox.Size = new System.Drawing.Size(100, 20);
             this.titleTextBox.TabIndex = 2;
             this.titleTextBox.Text = "Nama Aktivitas";
             this.titleTextBox.TextChanged += new System.EventHandler(this.titleTextBox_TextChanged);
             // 
             // enterButton
             // 
-            this.enterButton.Location = new System.Drawing.Point(847, 409);
-            this.enterButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enterButton.Location = new System.Drawing.Point(635, 332);
             this.enterButton.Name = "enterButton";
-            this.enterButton.Size = new System.Drawing.Size(100, 28);
+            this.enterButton.Size = new System.Drawing.Size(75, 23);
             this.enterButton.TabIndex = 3;
             this.enterButton.Text = "button1";
             this.enterButton.UseVisualStyleBackColor = true;
@@ -81,10 +76,9 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(585, 377);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteButton.Location = new System.Drawing.Point(439, 306);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(100, 28);
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 4;
             this.deleteButton.Text = "deleteButton";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -93,18 +87,18 @@
             // testCheckBox
             // 
             this.testCheckBox.FormattingEnabled = true;
-            this.testCheckBox.Location = new System.Drawing.Point(485, 155);
-            this.testCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.testCheckBox.Location = new System.Drawing.Point(364, 126);
             this.testCheckBox.Name = "testCheckBox";
-            this.testCheckBox.Size = new System.Drawing.Size(159, 106);
+            this.testCheckBox.Size = new System.Drawing.Size(120, 79);
             this.testCheckBox.TabIndex = 5;
             this.testCheckBox.SelectedIndexChanged += new System.EventHandler(this.testCheckBox_SelectedIndexChanged);
             // 
             // WhatIsChecked
             // 
-            this.WhatIsChecked.Location = new System.Drawing.Point(453, 449);
+            this.WhatIsChecked.Location = new System.Drawing.Point(340, 365);
+            this.WhatIsChecked.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.WhatIsChecked.Name = "WhatIsChecked";
-            this.WhatIsChecked.Size = new System.Drawing.Size(130, 23);
+            this.WhatIsChecked.Size = new System.Drawing.Size(98, 19);
             this.WhatIsChecked.TabIndex = 6;
             this.WhatIsChecked.Text = "WhatIsChecked";
             this.WhatIsChecked.UseVisualStyleBackColor = true;
@@ -112,9 +106,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.WhatIsChecked);
             this.Controls.Add(this.testCheckBox);
             this.Controls.Add(this.deleteButton);
@@ -122,9 +116,9 @@
             this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.activityListBox);
             this.Controls.Add(this.refreshButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

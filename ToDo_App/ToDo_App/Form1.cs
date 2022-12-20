@@ -17,12 +17,26 @@ namespace ToDo_App
             string basePath = Application.StartupPath;
             int index = basePath.IndexOf("ToDo_App");
             // add ToDo_App to path 
-            string path = basePath.Substring(0, index + @"ToDo_App\ToDo_App\ToDo_App".Length) + @"\Database.mdf";
+            string path = basePath.Substring(0, index + @"ToDo_App\ToDo_App".Length) + @"\Database.mdf";
             string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+path+ ";Integrated Security=True;Connect Timeout=30";
             return connectionString;
             //static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\USER\Code\C#\ToDo\ToDo_App\ToDo_App\Database.mdf;Integrated Security=True;Connect Timeout=30";
 
         }
+
+        public void updateApp()
+        {
+            Timer timer = new Timer();
+            timer.Tick += new EventHandler(timer_tick);
+            timer.Interval = 2000;
+            timer.Start();
+        }
+
+        public void timer_tick(object sender, EventArgs ev)
+        {
+            refreshTable();
+        }
+
         static string connectionString = getConnectionString();
         public Form1()
         {
@@ -117,6 +131,12 @@ namespace ToDo_App
                                     testCheckBox.GetItemCheckState(testCheckBox.Items.IndexOf(itemChecked)).ToString() + ".");
                 }
             
+        }
+        //otomatis ketrigger ketika form keload
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            refreshTable();
+            //updateApp();
         }
     }
 }
